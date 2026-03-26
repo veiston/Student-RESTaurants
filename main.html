@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DineAcademic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="topbar">
+        <a class="brand" href="#">DineAcademic</a>
+        <nav aria-label="Päänavigaatio">
+          <a href="#ravintolat">Ravintolat</a>
+          <a href="#kartta">Kartta</a>
+          <a href="#profiili">Profiili</a>
+        </nav>
+        <button class="btn ghost" type="button">Kirjaudu</button>
+      </header>
+
+      <main>
+        <section class="hero">
+          <p class="kicker">Lähelläsi tänään</p>
+          <h1>Kaikki kampuksen ravintolat yhdellä näkymällä.</h1>
+          <p>
+            DineAcademic auttaa löytämään opiskelijaystävällisen lounaan
+            sekunneissa. Suodata, vertaile ja tallenna suosikkeihin.
+          </p>
+          <div class="actions">
+            <button class="btn" type="button">Avaa ravintolat</button>
+            <button class="btn ghost" type="button">Luo käyttäjä</button>
+          </div>
+        </section>
+
+        <section class="grid" id="ravintolat">
+          <aside class="card filter">
+            <h2>Suodata</h2>
+            <input type="search" placeholder="Hae ravintolaa..." />
+            <div class="chips">
+              <button class="chip active" type="button">Helsinki</button>
+              <button class="chip" type="button">Espoo</button>
+              <button class="chip" type="button">Vantaa</button>
+              <button class="chip" type="button">Kasvis</button>
+              <button class="chip" type="button">Vegaani</button>
+            </div>
+          </aside>
+
+          <section class="list">
+            <article class="card restaurant featured">
+              <p class="pill">Lähin ravintola</p>
+              <h3>Pääkirjaston Ravintola</h3>
+              <p class="meta">0,2 km · Aramark</p>
+              <p>
+                Moderni, valoisa ruokasali kirjaston sydämessä. Päivittäin
+                monipuolinen lounas.
+              </p>
+              <p class="time">Lounas 10:30-14:30</p>
+            </article>
+
+            <article class="card restaurant">
+              <h3>Kumpula Bistro</h3>
+              <p class="meta">0,8 km · Compass Group</p>
+              <p>Ekologisia valintoja ja lämmin tunnelma.</p>
+              <p class="time">Lounas 11:00-14:00</p>
+            </article>
+
+            <article class="card restaurant">
+              <h3>Metsätalon Unicafe</h3>
+              <p class="meta">1,1 km · Fazer Food Services</p>
+              <p>Perinteinen opiskelijaravintola ja nopeat lounaat.</p>
+              <p class="time">Lounas 10:30-15:00</p>
+            </article>
+          </section>
+        </section>
+
+        <section class="card map" id="kartta">
+          <h2>Kartta</h2>
+          <div class="map-art" role="img" aria-label="Ravintolat kartalla"></div>
+          <p>Pääkirjaston Ravintola, Yliopistonkatu 4 - etäisyys 0,2 km.</p>
+        </section>
+
+        <section class="card profile" id="profiili">
+          <h2>Profiili</h2>
+          <p>Joni Opiskelija · joni.opiskelija@opiskelu.fi</p>
+          <div class="chips">
+            <span class="chip active">Pääkirjasto</span>
+            <span class="chip">Kumpula Bistro</span>
+            <span class="chip">Lisää suosikki +</span>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
