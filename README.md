@@ -1,45 +1,50 @@
 # Student RESTaurants
 
-Huippulaadukas ja tyylikäs sivu opiskelijaravintoloiden kätevään löytämiseen.
+Huippulaadukas ja tyylikäs sivu opiskelijaravintoloiden kätevään löytämiseen. 🧑‍🍳👍
 
-Created with Ilkka's WSK-26-express JS-pohja
+🦕 Klikattava [linkki](https://student-rest-aurants3.vercel.app/)
 
-## 📋 Tehtävän vaatimukset (Grade Requirements)
+- Created with Ilkka's WSK-26-express JS-pohja
 
-### Minimisisältö (Arvosana 1) - [KAIKKI TOTEUTETTU]
+## Tehtävän vaatimukset
 
-- [x] Ravintoloiden listaus (Discovery-sivu)
-- [x] Päivän ja viikon ruokalistojen näyttäminen (Modal-näkymä)
-- [x] Lähdekoodi GitHubissa
-- [x] Hyvät Git-käytänteet
+Minimisisältö (arvosana 1): ✅
 
-### Arvosana > 2 (Kattava toteutus) - [KAIKKI TOTEUTETTU]
+- Ravintolat ovat listattu jotenkin ja käyttäjä voi valita haluaako nähdä päivän tai viikon ruokalistan ja ko. ruokalistat näytetään. Julkaistu users.metropolia.fi palvelimella (tai muulla julkisella palvelimella) ✅
+- Lähdekoodi GitHubissa (tai vastaavassa palvelussa) ✅
+- Hyvät Git käytänteet ✅
 
-- [x] **Asiakkaan kirjautuminen & rekisteröityminen**: Täysin toimiva auth-järjestelmä.
-- [x] **Suosikkiravintolan valinta**: Käyttäjä voi tallentaa suosikkinsa profiiliin.
-- [x] **Omien tietojen päivitys**: Käyttäjänimi ja sähköposti päivitettävissä.
-- [x] **Profiilikuvan lisäys**: Avatarin lataus ja näyttö toteutettu.
-- [x] **Ravintoloiden filtteröinti**: Haku nimen/kaupungin mukaan sekä pika-chipit kaupungeille ja ketjuille.
-- [x] **Selkeä ja looginen listaus**: Moderni korttimuotoilu ja selkeä hierarkia.
-- [x] **Ravintolat kartalla**: Interaktiivinen Leaflet-kartta kaikilla ravintoloilla.
-- [x] **Lähin ravintola korostettu**: Geolocation-rajapinnan käyttö, automaattinen etäisyyden laskenta ja "Lähin"-pillin korostus.
+Arvosana > 2 (koko listausta ei tarvitse toteuttaa): ✅
 
-### Tekniset vaatimukset (Technical Compliance)
+- Minimivaatimukset ✅
+- Asiakkaan kirjautuminen/rekisteröityminen ✅
+- Asiakas voi valita suosikkiravintolansa ✅
+- Asiakas voi päivittää omia tietojaan ✅
+- Asiakas voi lisätä profiilikuvan ✅
+- Ravintolat voi filtteröidä esim. kaupungin, palveluntarjoajan ym. mukaan ✅
+- Ravintolat ovat listattu selkeästi ja loogisesti ✅
+- Ravintolat ovat kartalla ✅
+- Lähin ravintola on korostettu ✅
+- Vapaavalintaisia toiminnallisuuksia ✅
 
-- [x] **Vanilla JavaScript**: Ei sovelluskehyksiä (React/Angular poistettu).
-- [x] **Ei CSS-frameworkeja**: Täysin kustomoitu, ammattimainen CSS.
-- [x] **ES6+ ominaisuudet**: Moduulit, Async/Await, Destructuring jne.
-- [x] **Responsiivisuus**: Täysi mobiili- ja työpöytätuki.
-- [x] **SPA-arkkitehtuuri**: Itse toteutettu reititin (Router.js) ja Layout-malli.
+Tekniset vaatimukset: ✅
 
-## ✨ Ekstra-toiminnot (Extra Features)
+- front-end-sovelluslogiikka toteutettava “vanilla” JavaScriptillä ✅
+  - ES6+ ominaisuuksien ja JS-harjoitusten käytäntöjen hyödyntäminen suotavaa ✅
+  - Angular/React/JQuery/tms. front-end sovelluskehysten tai kirjastojen käyttö kielletty ✅
+  - CSS Frameworkien käyttö, kuten Bootstrap, on kielletty. ✅
+- hyvien ohjelmointikäytäntöjen noudattaminen ✅
+  - loogiset nimeämiskäytännöt ✅
+  - sisennykset ja rivitykset ✅
+- CSS ja HTML ammattimaisesti tehty, validoitu ✅
+  - ulkoasu siisti sekä selkeä ✅
+  - responsiivinen sisältö plussaa ✅
 
-- **Moderni UI/UX**: Newsreader & Manrope typografia, pehmeät varjot ja hienostuneet transitio-animaatiot.
-- **Karttatyylit**: CartoDB Voyager -karttapohja ammattimaiseen ilmeeseen.
-- **Keskkitetty Layout**: Reititin hallitsee sovelluksen kuorta (header/nav), mikä tekee koodista erittäin siistiä ja helposti laajennettavaa.
-- **Virheenhalinta**: Kattavat virheilmoitukset kirjautumisessa ja datan latauksessa.
+## Extra
+- Animaatioita sielä täällä. ✅
+- Varjoefektit ja hover-tila! ✅
 
-## 🚀 Käynnistys
+## Käynnistys
 
 1. `npm install`
 2. `npm run dev`
