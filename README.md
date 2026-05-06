@@ -2,7 +2,7 @@
 
 Huippulaadukas ja tyylikäs sivu opiskelijaravintoloiden kätevään löytämiseen. 🧑‍🍳👍
 
-🦕 Klikattava [linkki](https://student-rest-aurants3.vercel.app/)
+## 🦕 Klikattava [linkki](https://student-rest-aurants3.vercel.app/)
 
 - Created with Ilkka's WSK-26-express JS-pohja
 
