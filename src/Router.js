@@ -73,47 +73,23 @@ function Router() {
     return routes.find((r) => r.path === path) || null;
   };
 
-  /**
-   * Handle a hash change: load the corresponding page and notify subscribers.
-   */
   const handleRoute = async () => {
-    const app = document.getElementById('app');
-    const route = resolve();
-
-    // Render Shared Layout
+    const app = document.getElementById('app'), route = resolve();
     app.innerHTML = `
       <div class="wrap">
         <header class="topbar">
           <a class="brand" href="#/">Student RESTaurants</a>
-          <nav>
-            ${routes
-              .filter(r => r.showInNav)
-              .map(r => `<a href="${r.path}" class="${window.location.hash === r.path ? 'active' : ''}">${r.labelKey}</a>`)
-              .join('')}
-            <a href="#/profile" class="${window.location.hash === '#/profile' ? 'active' : ''}">Profiili</a>
-          </nav>
+          <nav>${routes.filter(r => r.showInNav).map(r => `<a href="${r.path}" class="${window.location.hash === r.path ? 'active' : ''}">${r.labelKey}</a>`).join('')}</nav>
         </header>
         <main id="content"></main>
-      </div>
-    `;
-
+      </div>`;
     const content = app.querySelector('#content');
-
-    // Notify all subscribed components
-    routeSubscribers.forEach((subscriber) => subscriber(route));
-
-    if (!route) {
-      content.innerHTML = '<p>404 — Page not found</p>';
-      return;
-    }
-
+    routeSubscribers.forEach(s => s(route));
+    if (!route) return content.innerHTML = '404';
     try {
-      const pageModule = await route.load();
-      await pageModule.default(content);
-    } catch (err) {
-      console.error('Failed to load route:', err);
-      content.innerHTML = '<p>Something went wrong loading this page.</p>';
-    }
+      const mod = await route.load();
+      await mod.default(content);
+    } catch (e) { content.innerHTML = 'Error'; }
   };
 
   /**
