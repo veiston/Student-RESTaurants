@@ -18,6 +18,15 @@ target
 
 **/*.class
 *.jar
+
+# Vite
+node_modules/
+dist/
+dist-ssr/
+*.local
+.env
+.env.local
+.env.*.local
 *.war
 *.ear
 *.json
