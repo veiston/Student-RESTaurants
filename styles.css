@@ -220,9 +220,26 @@ nav a.active {
   margin: 0;
 }
 
-.restaurant.featured {
-  border-color: rgba(176, 97, 51, 0.22);
-  background: linear-gradient(180deg, rgba(245, 230, 218, 0.72), rgba(255, 255, 255, 0.94));
+.restaurant.favorite {
+  border: 2px solid var(--accent);
+  background: var(--accent-soft);
+}
+
+.menu-list {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+}
+
+.menu-item {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px dotted var(--line);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
 }
 
 .empty-state {
@@ -265,34 +282,67 @@ nav a.active {
 }
 
 /* Forms */
-input[type="text"], input[type="password"], input[type="search"] {
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+input[type="search"] {
+  display: block;
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: 0.8rem 1rem;
+  margin-top: 0.4rem;
   border: 1px solid var(--line);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  background: #ffffff;
   transition: var(--transition);
 }
 
 input:focus {
-  border-color: rgba(176, 97, 51, 0.6);
-  background: #fff;
-  box-shadow: 0 0 0 3px rgba(176, 97, 51, 0.1);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
-label { display: block; margin-bottom: 1rem; font-weight: 600; font-size: 0.9rem; }
+label { 
+  display: block; 
+  margin-bottom: 1.25rem; 
+  font-weight: 700; 
+  font-size: 0.85rem; 
+  color: var(--muted);
+}
 
-/* Utility & Layout Classes */
-.container-sm { max-width: 400px; margin: 4rem auto; }
-.text-center { text-align: center; }
-.mt-1 { margin-top: 1rem; }
-.mb-1 { margin-bottom: 1rem; }
-.mb-2 { margin-bottom: 2rem; }
-.w-full { width: 100%; }
-.flex-gap-1 { display: flex; gap: 1rem; }
-.flex-gap-05 { display: flex; gap: 0.5rem; }
-.hidden { display: none; }
-.sticky-top { position: sticky; top: 5rem; height: fit-content; }
+/* Home Page Specifics */
+.display-title {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  letter-spacing: -0.02em;
+  margin: 1rem 0 1.5rem;
+}
+
+.hero-lead {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+.feature-card {
+  padding: 2rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.mt-2 { margin-top: 2rem; }
+
+@media (min-width: 901px) {
+  .grid.mt-2 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 /* Modal Component */
 .modal-overlay {

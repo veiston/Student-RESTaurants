@@ -8,7 +8,7 @@ export default function render(app) {
       <section class="card container-sm">
         <h2>${isLogin ? 'Kirjaudu' : 'Luo tili'}</h2>
         <form id="auth-form">
-          <label>Tunnus <input id="u" type="text" required></label>
+          <label>Käyttäjätunnus <input id="u" type="text" required></label>
           ${!isLogin ? '<label>Sähköposti <input id="e" type="email" required></label>' : ''}
           <label>Salasana <input id="p" type="password" required></label>
           <button class="btn w-full mt-1" type="submit">${isLogin ? 'Kirjaudu' : 'Rekisteröidy'}</button>

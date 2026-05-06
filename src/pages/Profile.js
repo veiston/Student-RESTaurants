@@ -1,15 +1,17 @@
 import profile from '../controllers/profileController.js';
 import auth from '../controllers/authController.js';
 import discovery from '../controllers/discoveryController.js';
-import { IMG_PATH } from '../constants.js';
+import {IMG_PATH} from '../constants.js';
 
 export default async function render(app) {
   const user = profile.getLocalUser();
-  if (!user) return app.innerHTML = `<section class="card container-sm text-center"><h2>Profiili</h2><a class="btn" href="#/login">Kirjaudu</a></section>`;
+  if (!user)
+    return (app.innerHTML = `<section class="card container-sm text-center"><h2>Profiili</h2><a class="btn" href="#/login">Kirjaudu</a></section>`);
 
   const favId = discovery.getLocalFavourite();
   const restaurants = discovery.getLocalRestaurants();
-  const favName = restaurants?.find(r => r._id === favId)?.name || 'Ei suosikkia';
+  const favName =
+    restaurants?.find((r) => r._id === favId)?.name || 'Ei suosikkia';
 
   app.innerHTML = `
     <div class="grid">
@@ -23,7 +25,7 @@ export default async function render(app) {
         <section class="card">
           <h2>Tiedot</h2>
           <form id="u-f">
-            <label>Tunnus <input id="u" value="${user.username}"></label>
+            <label>Käyttäjätunnus <input id="u" value="${user.username}"></label>
             <label>Sähköposti <input id="e" value="${user.email}"></label>
             <div class="flex-gap-1 mt-1"><button class="btn">Tallenna</button><button class="btn ghost" id="l-o" type="button">Ulos</button></div>
           </form>
@@ -31,16 +33,31 @@ export default async function render(app) {
       </div>
     </div>`;
 
-  app.querySelector('#a-f').onsubmit = async e => {
+  app.querySelector('#a-f').onsubmit = async (e) => {
     e.preventDefault();
     const f = app.querySelector('#a-p').files[0];
-    if (f) try { const u = await profile.changeAvatar(f); app.querySelector('#a-i').src = IMG_PATH + u.avatar; } catch(e) { alert('Error'); }
+    if (f)
+      try {
+        const u = await profile.changeAvatar(f);
+        app.querySelector('#a-i').src = IMG_PATH + u.avatar;
+      } catch (e) {
+        alert('Error');
+      }
   };
-  app.querySelector('#u-f').onsubmit = async e => {
+  app.querySelector('#u-f').onsubmit = async (e) => {
     e.preventDefault();
-    try { await profile.saveProfile({username: app.querySelector('#u').value, email: app.querySelector('#e').value}); alert('Ok'); } catch(e) { alert('Error'); }
+    try {
+      await profile.saveProfile({
+        username: app.querySelector('#u').value,
+        email: app.querySelector('#e').value,
+      });
+      alert('Ok');
+    } catch (e) {
+      alert('Error');
+    }
   };
-  app.querySelector('#l-o').onclick = () => { auth.logout(); window.location.hash = '#/'; };
+  app.querySelector('#l-o').onclick = () => {
+    auth.logout();
+    window.location.hash = '#/';
+  };
 }
-
-
