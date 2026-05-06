@@ -1,7 +1,7 @@
 export default function render(app) {
   app.innerHTML = `
     <section class="hero">
-      <p class="pill">Student Dining</p>
+      <p class="pill">Student-RESTaurants</p>
       <h1>Löydä paras lounas sekunneissa.</h1>
       <p>
         Tutki opiskelijaravintoloita, vertaile ruokalistoja ja valitse suosikkisi.

@@ -78,7 +78,7 @@ function Router() {
     app.innerHTML = `
       <div class="wrap">
         <header class="topbar">
-          <a class="brand" href="#/">Student RESTaurants</a>
+          <a class="brand" href="#/">Student-RESTaurants</a>
           <nav>${routes.filter(r => r.showInNav).map(r => `<a href="${r.path}" class="${window.location.hash === r.path ? 'active' : ''}">${r.labelKey}</a>`).join('')}</nav>
         </header>
         <main id="content"></main>
